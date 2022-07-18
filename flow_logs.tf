@@ -3,7 +3,7 @@
 ##############################################################################
 
 resource "ibm_is_flow_log" "edge_flow_logs" {
-  count          = var.create_flow_logs_collector == true && var.vpc_id == null && var.flow_logs_bucket_name != null ? 1 : 0
+  count          = var.create_flow_logs_collector == true ? 1 : 0
   name           = "${var.prefix}-edge-flow-logs"
   target         = module.edge_vpc.vpc_id
   active         = true
