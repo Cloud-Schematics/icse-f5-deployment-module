@@ -7,6 +7,12 @@ output "vpc_id" {
   value       = module.edge_vpc.vpc_id
 }
 
+output "vpc_crn" {
+  description = "CRN of edge VPC"
+  value       = module.edge_vpc.vpc_crn
+}
+
+
 output "network_acl" {
   description = "Network ACL name and ID"
   value       = module.edge_vpc.network_acl
