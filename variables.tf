@@ -362,3 +362,21 @@ variable "enable_f5_external_fip" {
 }
 
 ##############################################################################
+
+##############################################################################
+# Flow Logs Variables
+##############################################################################
+
+variable "create_flow_logs_collector" {
+  description = "Create flow logs collector for VPC. Collectors will only be created if `vpc_id` is `null` and a COS bucket name is provided."
+  type        = bool
+  default     = true
+}
+
+variable "flow_logs_bucket_name" {
+  description = "Flow logs collector bucket name"
+  type        = string
+  default     = null
+}
+
+##############################################################################
