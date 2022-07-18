@@ -24,7 +24,7 @@ output "subnet_zone_list" {
 
 output "subnet_tiers" {
   description = "Map of subnet tiers where each key contains the subnet zone list for that tier."
-  value = module.edge_vpc.subnet_tiers
+  value       = module.edge_vpc.subnet_tiers
 }
 
 ##############################################################################
@@ -33,7 +33,7 @@ output "subnet_tiers" {
 # F5 Security Group Outputs
 ##############################################################################
 
-output security_groups {
+output "security_groups" {
   description = "List of security groups created."
   value       = module.f5_security_groups.groups
 }
@@ -44,10 +44,10 @@ output security_groups {
 # Virtual Server Outputs
 ##############################################################################
 
-output virtual_servers {
+output "virtual_servers" {
   description = "List of virtual servers created by this module."
-  value       = [
-    for instance in keys(module.f5_vsi_map.value):
+  value = [
+    for instance in keys(module.f5_vsi_map.value) :
     module.vsi_deployment[instance].virtual_servers
   ]
 }
