@@ -23,7 +23,6 @@ Using this module users, can optionally provision the F5 BIG-IP and setup the im
     - [F5 Management Security Group](#f5-management-security-group)
     - [F5 Workload Security Group](#f5-workload-security-group)
 
-
 ---
 
 ## Prerequisites
