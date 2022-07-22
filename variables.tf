@@ -235,6 +235,12 @@ variable "bastion_cidr_blocks" {
 # F5 Instance Data Variables
 ##############################################################################
 
+variable "provision_f5_vsi" {
+  description = "Create F5 VSI on edge VPC. To provision network without virtual server deployments, set to `false`."
+  type        = bool
+  default     = true
+}
+
 variable "f5_template_data" {
   description = "Data for all f5 templates"
   sensitive   = true
