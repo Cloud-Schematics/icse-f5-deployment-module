@@ -50,7 +50,7 @@ resource "ibm_kms_key" "f5_vsi_key" {
 
 module "f5_vsi_map" {
   source = "github.com/Cloud-Schematics/list-to-map"
-  list   = var.provision_f5_vsi == true ? local.f5_vsi_list : {}
+  list   = var.provision_f5_vsi == true ? local.f5_vsi_list : []
 }
 
 module "vsi_deployment" {
